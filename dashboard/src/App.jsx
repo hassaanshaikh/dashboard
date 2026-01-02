@@ -25,13 +25,21 @@ return (
           </div>
           
           {/* nav bar */}
-
-
+          <div className="p-4 space-y-2">
+            {navItems.map((item, index) => {
+              return (
+                <div key={index} className="flex items-center gap-3">
+                  <item.icon className="text-xl" />
+                  <span>{item.name}</span>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         {/* main content */}
         <main className="flex-1">
-          <header className="bg-white flex justify-between p-4">
+          <header className="bg-white flex justify-between p-3">
             <button className="text-xl p-2 font-bold lg:hidden" onClick={() => setSidebarOpen(true)}><MdMenu className="text-3xl" /></button>
             <h1 className="text-2xl font-bold">Dashboard</h1>
             <div className="bg-gray-300 w-10 h-10 rounded-full"></div>
